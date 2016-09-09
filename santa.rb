@@ -36,10 +36,15 @@ class Santa
   def age
     @age
   end
-  
+
   def ethnicity
     @ethnicity
   end
+
+  #making this getter method just to test my driver code for line 61 and line 63
+  def gender
+    @gender
+  end 
 
 end
 
@@ -50,3 +55,9 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
+
+#driver code to check getter and setter methods
+santa = Santa.new("agender","Korean")
+puts "Santa named Jack is of #{santa.gender} gender and #{santa.ethnicity} ethnicity."
+santa.gender=("bigender")
+puts "Santa named Jack is of #{santa.gender} gender and #{santa.ethnicity} ethnicity."
