@@ -17,4 +17,8 @@ class TodoList
         list.delete(item)
     end
 
+     def get_item(x)
+        list[x]
+    end
+
 end
