@@ -19,7 +19,40 @@
       #otherwise
           # tell the second user they lost because they ran out of tries.
             #end the game 
-            
+
+  #let's make a game ..woo hoo!!!
+
+  class Guess_word
+    attr_reader :guess_count,:length, :user_display_array,:provided_word
+    def initialize(provided_word)
+      @provided_word = provided_word
+   p   @length = provided_word.length
+   p   @user_display_array = Array.new(@length,"_")
+   p   @guess_count = @length
+    end
+
+    def word_check_logic(letter)
+      if @provided_word.include?(letter)
+          @user_display_array.delete_at(@provided_word.index(letter))
+            @user_display_array.insert(@provided_word.index(letter), letter)
+             @user_display_array.join(' ')
+             #@user_display_array
+      else 
+        @guess_count -= 1
+        puts"try again"
+          @user_display_array.join(' ')
+         #p @user_display_array
+      end
+    end
+
+  end
+
+
+
+      
+
+
+
 
 
 
