@@ -10,7 +10,7 @@
   #second user will provide one letter at a time.
 # check to see if that letter is included in word
       # if it is included then take that word and store it 
-        # otherwise tell the user try agian it's not included in the word.
+        # otherwise tell the user try again it's not included in the word.
         # now if it included check that letter's index and replace it in dashes with the same index.
 
 # once the user guesses the word or runs out of tries do this.
@@ -47,6 +47,39 @@
 
   end
 
+  #driver code
+puts "word"
+  given_word= gets.chomp
+  game = Guess_word.new(given_word)
+  loop do
+  puts"make a guess"
+  puts "you have #{game.guess_count} tries left to guess the word."
+  user_guess=gets.chomp
+  game.word_check_logic(user_guess)
+  p final_word=game.user_display_array.join(' ')
+  puts "this is the word so far #{final_word}"
+  if final_word == given_word # not working at the moment unless I ask for a whole string from user at once
+    puts "you win"
+    break
+  end
+  #if @user_display_array == given_word
+  # puts "you won"
+  # break
+  # elsif @guess_count == 0
+  #   puts "you ran out of tries"
+  #   break
+      
+     
+  #else
+  #puts"try again"
+  #end
+  break if game.guess_count == 0
+  
+    
+  end
+  
+  puts "YOu lost..you ran out of tries."
+  
 
 
       
