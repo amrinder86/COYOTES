@@ -1,12 +1,15 @@
 class Santa
+    
+    attr_reader :age,:ethnicity,:reindeer_ranking
+    attr_accessor :gender
 
   def initialize(gender,ethnicity)
     @gender =gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = rand(140)
     puts "Initializing Santa instance ..."
-    puts "Gender: #{@gender} Ethnicity: #{ethnicity}"
+    puts "Gender: #{@gender}\nEthnicity: #{ethnicity}\n Age:#{@age}"
   end
 
   def speak
@@ -23,32 +26,18 @@ class Santa
 
   def get_mad_at(reindeer_name)
     @reindeer_ranking.delete(reindeer_name)
-    puts "#{reindeer_name} you don't deserve to be on this list at the moment #{@reindeer_ranking}" 
+    puts "#{reindeer_name} you don't deserve to be on this list at the moment \n #{@reindeer_ranking}" 
+    puts ""
     @reindeer_ranking << reindeer_name
-    puts "Santa gets mad at #{reindeer_name} and  places #{reindeer_name} in last place ranking in #{@reindeer_ranking}"
-    end
+    puts "Santa gets mad at #{reindeer_name} and  places #{reindeer_name} in last place ranking in \n #{@reindeer_ranking}"
+  end
     
-  #setter methods
-  def gender=(new_gender)
-      @gender = new_gender
-  end
-  # getter methods 
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
-  #making this getter method just to test my driver code for line 61 and line 63
-  def gender
-    @gender
-  end 
-
 end
 
 #Driver code 
+santa= Santa.new("Male","Latino")
+santa.speak
+santa.eat_milk_and_cookies("snickerdoodle")
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
@@ -59,5 +48,16 @@ end
 #driver code to check getter and setter methods
 santa = Santa.new("agender","Korean")
 puts "Santa named Jack is of #{santa.gender} gender and #{santa.ethnicity} ethnicity."
+puts "Changing gender ......."
+puts ""
 santa.gender=("bigender")
-puts "Santa named Jack is of #{santa.gender} gender and #{santa.ethnicity} ethnicity."
+puts "Santa named Jack now is of #{santa.gender} gender and #{santa.ethnicity} ethnicity."
+
+# making multiples santa
+ for i in 1..1500
+   puts "==" *28
+  santa.speak
+    santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+    santa.get_mad_at(santa.reindeer_ranking.sample)
+    
+end
