@@ -58,19 +58,33 @@ puts "word"
   game.word_check_logic(user_guess)
   p final_word=game.user_display_array.join(' ')
   puts "this is the word so far #{final_word}"
-  if final_word == given_word # not working at the moment unless I ask for a whole string from user at once
+  
+  puts "to solve the Puzzle type 'yes'  or press any other key to continue"
+  puzzle_solve=gets.chomp
+  if puzzle_solve == 'yes'
+    puts "Go ahead"
+    respone=gets.chomp
+    if respone == given_word 
     puts "you win"
     break
+    end
+    elsif game.guess_count == 0
+    puts "YOu lost..you ran out of tries."
+  else
+    puts "As you wish ..keep trying to guess"
   end
+
+  # if final_word == given_word # not working at the moment unless I ask for a whole string from user at once
+  #   puts "you win"
+  #   break
+  # end
   #if @user_display_array == given_word
   # puts "you won"
   # break
   # elsif @guess_count == 0
   #   puts "you ran out of tries"
   #   break
-      
-     
-  #else
+    #else
   #puts"try again"
   #end
   break if game.guess_count == 0
