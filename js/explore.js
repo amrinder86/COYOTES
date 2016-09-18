@@ -16,6 +16,9 @@ function reverse(string) {
   return new_string;
 }
 
- // reverse("I'm loving javascript so far")
+ // driver code
 
 console.log(reverse("hello"));
+
+console.log(reverse("I'm loving javascript so far"));
+
