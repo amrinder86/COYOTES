@@ -22,3 +22,20 @@ console.log(reverse("hello"));
 
 console.log(reverse("I'm loving javascript so far"));
 
+var new_word = reverse("love testing this method");  // This stores the value of above function in new variable
+
+console.log(new_word);
+ 
+   var new_word = reverse("awesome weather outside");
+
+  console.log(new_word);
+
+  if (new_word[0] == "e")
+  {
+  console.log("First letter is e.")}
+
+  else if (new_word[0] == "o")
+  {console.log("First letter is o.")}
+
+  else 
+  {console.log("First letter is neither o or e.")}
