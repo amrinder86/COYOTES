@@ -54,7 +54,7 @@ function compare_pair(object1,object2)
         }
       }
       return match ;
-    }
+  }
  // driver code 
   var object6={name: "Steven", age: 58, eyes:"blue"};
   var object7={name: "Tamir", age: 54, eyes: "black"};
@@ -63,6 +63,19 @@ function compare_pair(object1,object2)
   
   console.log(compair_pair2(object6,object9)); // will return true
   console.log(compair_pair2(object6,object7)); // will return false
+
+//  Create an empty array to store the created words
+//  write alphabet to choose a random letter from it 
+//  start a loop and having it loop until the number is less than provided integer
+//  make a empty string to store the word
+//  make a variable to select random number 1-10
+//  start a loop until the word matches the length of random number
+//  once the word is all done add the word to array
+//  print the array
+
+function random_number(integer){
+    var return_array = [];
+  }
 
 
   
