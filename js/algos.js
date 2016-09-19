@@ -75,7 +75,17 @@ function compare_pair(object1,object2)
 
 function random_number(integer){
     var return_array = [];
+    var alphabet ="abcdefghijklmnopqrstuvwxyz";
+  for (var i = 0; i < integer; i++) {
+    var word = "";
+    var random_length = Math.floor(Math.random() * (10 - 1) +1);
+    for (var index = 0; index < random_length; index++) {
+      word += alphabet.charAt(Math.random().toString()* alphabet.length);
+    }
+    return_array.push(word);
+  }
+  return return_array;
   }
 
-
+console.log(random_number(10));
   
