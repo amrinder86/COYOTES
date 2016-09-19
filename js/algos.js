@@ -47,14 +47,22 @@ function compare_pair(object1,object2)
   // we will compare keys of both functions by looping through each key and if it keys match result will be true otherwise false
 
   function compair_pair2(object1, object2) {
-    var match = false
+    var match = false;
       for ( i = 0; i < Object.keys(object1).length; i++) {
         if (object1[Object.keys(object1)[i]] === object2[Object.keys(object2)[i]]) {
-          match = true
+          match = true;
         }
       }
-      return match 
+      return match ;
     }
-    // driver code 
+ // driver code 
+  var object6={name: "Steven", age: 58, eyes:"blue"};
+  var object7={name: "Tamir", age: 54, eyes: "black"};
+  var object8={name: "Steven", age: 54,eyes:"black"};
+  var object9={name: "Tamir", age: 59, eyes:"blue"};
+  
+  console.log(compair_pair2(object6,object9)); // will return true
+  console.log(compair_pair2(object6,object7)); // will return false
 
 
+  
