@@ -20,3 +20,41 @@ function longest_phrase(array){
   var array2 = ["long phrase","longest phrase","longer phrase"];
   longest_phrase(array1);
   longest_phrase(array2);
+
+// If we want to compare just 2 objects with 2 keys not more than 2 then we can do this easy way
+
+
+function compare_pair(object1,object2)
+ {
+    if(object1['age']==object2['age']){
+      console.log(true);
+    } 
+    else {
+      console.log(false);
+    }   
+  } 
+  
+  // driver code 
+  var object1={name: "Steven", age: 54};
+  var object2={name: "Tamir", age: 54};
+
+  var object3={name: "Steven", age: 54};
+  var object4={name: "Tamir", age: 59};
+  
+  compare_pair(object1,object2); //should return true
+  compare_pair(object3,object4); // Should return false
+
+  // we will compare keys of both functions by looping through each key and if it keys match result will be true otherwise false
+
+  function compair_pair2(object1, object2) {
+    var match = false
+      for ( i = 0; i < Object.keys(object1).length; i++) {
+        if (object1[Object.keys(object1)[i]] === object2[Object.keys(object2)[i]]) {
+          match = true
+        }
+      }
+      return match 
+    }
+    // driver code 
+
+
